@@ -249,9 +249,9 @@ See the documentation page for each algorithm for a complete account of possible
 
     from spinup import ppo_tf1 as ppo
     import tensorflow as tf
-    import gym
+    import gymnasium as gym
 
-    env_fn = lambda : gym.make('LunarLander-v2')
+    env_fn = lambda **kwargs : gym.make('LunarLander-v2', **kwargs)
 
     ac_kwargs = dict(hidden_sizes=[64,64], activation=tf.nn.relu)
 

@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
-import gym
-from gym.spaces import Discrete, Box
+import gymnasium as gym
+from gymnasium.spaces import Discrete, Box
 
 def mlp(x, sizes, activation=tf.tanh, output_activation=None):
     # Build a feedforward neural network.
@@ -44,7 +44,7 @@ def train(env_name='CartPole-v0', hidden_sizes=[32], lr=1e-2,
     loss = -tf.reduce_mean(weights_ph * log_probs)
 
     # make train op
-    train_op = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss)
+    train_op = tf.optimizers.Adam(learning_rate=lr).minimize(loss)
 
     sess = tf.InteractiveSession()
     sess.run(tf.global_variables_initializer())
