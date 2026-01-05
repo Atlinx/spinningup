@@ -2,8 +2,8 @@ from os.path import join, dirname, realpath
 from setuptools import setup
 import sys
 
-assert sys.version_info.major == 3 and sys.version_info.minor >= 6, \
-    "The Spinning Up repo is designed to work with Python 3.6 and greater." \
+assert sys.version_info.major == 3 and sys.version_info.minor >= 9, \
+    "The Spinning Up repo is designed to work with Python 3.9 and greater." \
     + "Please install it before proceeding."
 
 with open(join("spinup", "version.py")) as version_file:
